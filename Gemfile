@@ -10,6 +10,9 @@ gem 'rails-i18n'
 # bootstrap-rails
 gem "twitter-bootstrap-rails"
 
+#turbolinks
+gem "turbolinks"
+
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
