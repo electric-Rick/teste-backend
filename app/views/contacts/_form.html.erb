@@ -44,6 +44,13 @@
     <%=f.error_span(:mobile) %>
   </div>
   <div class="form-group">
+    <%= f.label :cpf_cnpj, "CPF/CNPJ", :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :cpf_cnpj, label: "CPF/CNPJ", :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:cpf_cnpj) %>
+  </div>
+  <div class="form-group">
     <%= f.label :message, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.text_area :message, :rows => 5, :class => 'form-control' %>
