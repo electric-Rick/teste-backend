@@ -23,8 +23,9 @@ module TesteBackend
     # config.assets.enbable = false
     # config.assets.compile = false
     # config.assets.js_compressor = false
-    # config.generators do |g|
+     config.generators do |g|
     #  g.assets false 
-    # end 
+       g.orm :mongoid
+     end 
   end
 end
