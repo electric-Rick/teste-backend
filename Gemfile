@@ -3,15 +3,27 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.2"
 
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.3"
+
 # tradução
 gem 'rails-i18n'
+
 # bootstrap-rails
 gem "twitter-bootstrap-rails"
 
 #turbolinks
 gem "turbolinks"
+
+# Mongo ORM to save at NOSQL database
+gem "mongo_mapper"
+
+# Mongo ID
+gem 'mongoid'
+
+# Mongo
+gem 'mongo', "~> 2.15.0"
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
