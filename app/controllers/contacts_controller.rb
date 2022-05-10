@@ -85,7 +85,7 @@ class ContactsController < ApplicationController
 
     def generate_log
       # Generate a dict with all the logs wich are necessary
-      user_log = {
+      contact_log = {
 
         "id":       @contact.id,
         "name":     @contact.name,
@@ -94,7 +94,7 @@ class ContactsController < ApplicationController
 
       }
       
-      DeliveryBoy.deliver(user_log, topic: 'logs')
+      DeliveryBoy.deliver(contact_log, topic: 'logs')
 
     end    
 end
