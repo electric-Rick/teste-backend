@@ -12,7 +12,7 @@ Essa aplicação consiste em um cadastro de contatos, mantendo seus dados salvo 
 - Novo campo deve apenas aceitar números. ✔️
 - Criar consumidor da mensageria (kafka) e salvar em um banco de dados não relacional ✔️
 - Criar uma nova mensageria com o topico ('logs') com os seguintes dados (id, nome, email, sysdate)✔️
-- Ajustar o docker-compose adicionando o banco não relacional
+- Ajustar o docker-compose adicionando o banco não relacional✔️
 
 ## Obrigatório utilizar:
 - Arquitetura microservicos com APIs RESTFUL
