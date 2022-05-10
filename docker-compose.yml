@@ -15,7 +15,7 @@ services:
     depends_on:
       - zookeeper
     ports:
-      - 9092:9092
+      - "9092:9092"
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
@@ -26,16 +26,30 @@ services:
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
       KAFKA_CREATE_TOPICS: order-topic:3:1
 
+  mongo:
+    image: 'mongo'
+    container_name: "contacts_message"
+    environment:
+      - MONGO_INITDB_DATABSE=contacts_message
+      - MONGO_INITDB_ROOT_USERNAME=osiris
+      - MONGO_INITDB_ROOT_PASSWORD=Rails.env.SECRET
+    volumes:
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017-27019:27017-27019'      
+
   kafdrop:
     image: obsidiandynamics/kafdrop:latest
+    restart: "no"
     networks: 
       - broker-kafka
     depends_on:
       - kafka
     ports:
-      - 19000:9000
+      - "19000:9000"
     environment:
-      KAFKA_BROKERCONNECT: kafka:29092
+      KAFKA_BROKERCONNECT: "kafka:29092"
 
   rails:
     build:
@@ -46,10 +60,11 @@ services:
       - zookeeper
       - kafka
       - kafdrop
+      - mongo
     networks: 
       - broker-kafka
     ports:
-      - 3000:3000
+      - "3000:3000"
 
 networks:
   broker-kafka:
